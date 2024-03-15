@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
-
 	"github.com/elazarl/goproxy"
 )
 
@@ -23,7 +21,8 @@ func main() {
 			return r
 		})
 
-	address := ":" + os.Args[1]
+	// address := ":" + os.Args[1]
+	address := ":8080"
 	fmt.Println("starting http proxy at ", address)
 	log.Fatal(http.ListenAndServe(address, proxy))
 }
